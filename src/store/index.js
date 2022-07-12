@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import beersSlice from "./beers-slice";
+import hotelsSlice from "./hotels-slice";
 import uiSlice from "./ui-slice";
 import favSlice from "./fav-slice";
 
 const store = configureStore({
   reducer: {
-    beers: beersSlice.reducer,
+    hotels: hotelsSlice.reducer,
     ui: uiSlice.reducer,
     fav: favSlice.reducer,
   },

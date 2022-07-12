@@ -1,8 +1,8 @@
 import { Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
-import BrowseBeer from "./pages/BrowseBeers";
-import FavoriteBeers from "./pages/FavoriteBeers";
+import BrowseHotels from "./pages/BrowseHotels";
+import FavoriteHotels from "./pages/FavoriteHotels";
 import Modal from "./components/UI/Modal";
 import React from "react";
 
@@ -12,13 +12,13 @@ function App() {
       <Modal />
       <Header />
       <Route path="/" exact>
-        <BrowseBeer />
+        <BrowseHotels />
       </Route>
-      <Route path="/browse-beers" exact>
-        <BrowseBeer />
+      <Route path="/browse-hotels" exact>
+        <BrowseHotels />
       </Route>
-      <Route path="/favorite-beers">
-        <FavoriteBeers />
+      <Route path="/favorite-hotels">
+        <FavoriteHotels />
       </Route>
     </>
   );

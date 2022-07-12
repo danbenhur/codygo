@@ -1,0 +1,5 @@
+.hotels_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  text-align: center;
+}
