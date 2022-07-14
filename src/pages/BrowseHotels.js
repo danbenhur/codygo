@@ -1,17 +1,29 @@
-import hotels from "../components/hotels";
-import HotelItem from "./HotelItem";
+import LeftBar from "../components/LeftBar";
+import HotelsBoxes from "../components/HotelsBoxes";
 import classes from "../css/BrowseHotels.module.css";
+import Button from "../components/UI/Button";
 
 const BrowseHotels = () => {
-  console.log(hotels);
-  const displayedHotels = hotels.map((hotel) => {
-    return <HotelItem hotelData={hotel} key={hotel.key} />;
-  });
+  //if (selectedChains.length === 0) {
+
+  //}
+
+  //  else {
+  //   displayedHotels = hotels.filter().map((hotel) => {
+  //     return <HotelItem hotelData={hotel} key={hotel.key} />;
+  //   });
+  // }
 
   return (
     <>
-      <p>ADD A NEW HOTEL</p>
-      <div className={classes.hotels_grid}>{displayedHotels}</div>
+      {/* <Button
+        buttonClass={classes.create_hotel_button}
+        buttonText="CREATE A NEW HOTEL"
+      /> */}
+      <div className={classes.browse_hotels}>
+        <LeftBar />
+        <HotelsBoxes />
+      </div>
     </>
   );
 };

@@ -1,0 +1,9 @@
+.chains_filter {
+  flex: 1;
+}
+.chains_filter li {
+  list-style-type: none;
+}
+.filter_title {
+  text-align: center;
+}

@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { hotels } from "../components/hotels";
 
 const hotelsSlice = createSlice({
   name: "hotels",
-  initialState: { hotelsFullList: [] },
+  initialState: { hotelsFullList: hotels },
   reducers: {
-    hotel(state, action) {
-      state.hotelsFullList = action.payload.hotelsFullList;
+    filterHotelList(state, action) {
+      state.hotelsFullList = state.hotelsFullList.filter(
+        (hotel) => hotel.chain_name === action.payload.chain_name
+      );
     },
   },
 });

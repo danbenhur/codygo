@@ -1,8 +1,8 @@
-import classes from "./CloseButton.module.css";
+import classes from "../../css/CloseButton.module.css";
 
 const CloseButton = (props) => {
   return (
-    <button className={classes.close} onClick={props.onClick}>
+    <button className={classes.close} onClick={props.closeItem}>
       <span>&times;</span>
     </button>
   );

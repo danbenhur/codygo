@@ -2211,7 +2211,7 @@ const hotelsJson = [
   },
 ];
 
-const hotels = hotelsJson.map((hotel) => {
+export const hotels = hotelsJson.map((hotel) => {
   return {
     key: hotel.hotel_id,
     city: hotel.city,
@@ -2223,4 +2223,9 @@ const hotels = hotelsJson.map((hotel) => {
     hotel_id: hotel.hotel_id,
   };
 });
-export default hotels;
+
+export const chains = hotelsJson.map((hotel) => {
+  return {
+    chain_name: hotel.chain_name,
+  };
+});
