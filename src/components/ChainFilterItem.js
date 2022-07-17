@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chainsActions } from "../store/chains-slice";
 
 const ChainFilterItem = (props) => {
   const [checked, setChecked] = useState(false);
   const dispatch = useDispatch();
+  const isAllUnchecked = useSelector((state) => state.chains.allUnchecked);
 
   const howManySelectedItems = useSelector(
     (state) => state.chains.selectedChains
@@ -28,6 +29,12 @@ const ChainFilterItem = (props) => {
       }
     }
   };
+
+  useEffect(() => {
+    if (isAllUnchecked && checked) {
+      setChecked(false);
+    }
+  }, [isAllUnchecked, checked]);
 
   return (
     <li key={props.id}>
