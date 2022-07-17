@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chainsActions } from "../store/chains-slice";
@@ -11,20 +10,17 @@ const ChainFilterItem = (props) => {
     (state) => state.chains.selectedChains
   );
 
-  const isAllUnchecked = useSelector((state) => state.chains.allUnchecked);
-
   const chainName = props.name;
 
   const handleChange = () => {
+    setChecked((prevState) => !prevState);
     if (!checked) {
-      setChecked(true);
       if (howManySelectedItems.length === 0) {
         dispatch(chainsActions.toggleAllUnchecked());
       }
 
       dispatch(chainsActions.addToSelectedChains(chainName));
     } else {
-      setChecked(false);
       dispatch(chainsActions.removeFromSelectedChains(chainName));
 
       if (howManySelectedItems.length === 1) {
@@ -32,14 +28,9 @@ const ChainFilterItem = (props) => {
       }
     }
   };
-  useEffect(() => {
-    if (isAllUnchecked && checked) {
-      setChecked(false);
-    }
-  }, [isAllUnchecked, checked]);
 
   return (
-    <>
+    <li key={props.id}>
       <label htmlFor={props.key}>
         <input
           type="checkbox"
@@ -49,7 +40,7 @@ const ChainFilterItem = (props) => {
         />
         {props.name}
       </label>
-    </>
+    </li>
   );
 };
 

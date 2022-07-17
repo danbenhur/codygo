@@ -26,15 +26,11 @@ const LeftBar = () => {
       return null;
     } else {
       return (
-        <>
-          <li key={chainKey}>
-            <ChainFilterItem
-              id={chainKey}
-              name={chainName}
-              onClick={filterHandler}
-            />
-          </li>
-        </>
+        <ChainFilterItem
+          id={chainKey}
+          name={chainName}
+          onClick={filterHandler}
+        />
       );
     }
   });
