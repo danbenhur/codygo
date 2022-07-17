@@ -1,4 +1,3 @@
-import { click } from "@testing-library/user-event/dist/click";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -34,6 +33,11 @@ const ChainFilterItem = (props) => {
       }
     }
   };
+  useEffect(() => {
+    if (isAllUnchecked && checked) {
+      setChecked(false);
+    }
+  }, [isAllUnchecked]);
 
   return (
     <>
