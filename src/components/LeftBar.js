@@ -42,13 +42,15 @@ const LeftBar = () => {
   return (
     <div className={classes.chains_filter}>
       <h3 className={classes.filter_title}>Filter By Chains</h3>
-      {!isAllUnchecked && (
-        <Button
-          buttonClass={classes.purge_btn}
-          buttonText="Clear All Filters"
-          buttonAction={purgeAll}
-        />
-      )}
+
+      <Button
+        buttonClass={`${
+          !isAllUnchecked ? classes.purge_btn : classes.purge_btn_disabled
+        }`}
+        buttonText="Clear All Filters"
+        buttonAction={purgeAll}
+      />
+
       <div>
         <ul>{chainsForFilter}</ul>
       </div>

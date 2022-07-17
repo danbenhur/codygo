@@ -4,12 +4,14 @@ const chainsSlice = createSlice({
   name: "chains",
   initialState: { allUnchecked: true, selectedChains: [] },
   reducers: {
-    toggleAllUncheckedToFalse(state) {
-      state.allUnchecked = false;
+    toggleAllUnchecked(state) {
+      if (state.allUnchecked) {
+        state.allUnchecked = false;
+      } else {
+        state.allUnchecked = true;
+      }
     },
-    toggleAllUncheckedToTrue(state) {
-      state.allUnchecked = true;
-    },
+
     addToSelectedChains(state, action) {
       const newItem = action.payload;
 

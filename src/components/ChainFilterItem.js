@@ -18,18 +18,17 @@ const ChainFilterItem = (props) => {
   const handleChange = () => {
     if (!checked) {
       setChecked(true);
+      if (howManySelectedItems.length === 0) {
+        dispatch(chainsActions.toggleAllUnchecked());
+      }
 
       dispatch(chainsActions.addToSelectedChains(chainName));
-
-      if (howManySelectedItems.length === 0) {
-        dispatch(chainsActions.toggleAllUncheckedToFalse());
-      }
     } else {
       setChecked(false);
       dispatch(chainsActions.removeFromSelectedChains(chainName));
 
       if (howManySelectedItems.length === 1) {
-        dispatch(chainsActions.toggleAllUncheckedToTrue());
+        dispatch(chainsActions.toggleAllUnchecked());
       }
     }
   };
@@ -37,17 +36,19 @@ const ChainFilterItem = (props) => {
     if (isAllUnchecked && checked) {
       setChecked(false);
     }
-  }, [isAllUnchecked]);
+  }, [isAllUnchecked, checked]);
 
   return (
     <>
-      <input
-        type="checkbox"
-        id={props.id}
-        checked={checked}
-        onChange={handleChange}
-      />
-      <label htmlFor={props.key}>{props.name}</label>
+      <label htmlFor={props.key}>
+        <input
+          type="checkbox"
+          id={props.id}
+          checked={checked}
+          onChange={handleChange}
+        />
+        {props.name}
+      </label>
     </>
   );
 };
