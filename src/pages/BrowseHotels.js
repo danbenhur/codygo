@@ -20,6 +20,7 @@ const BrowseHotels = () => {
         buttonClass={classes.create_hotel_button}
         buttonText="CREATE A NEW HOTEL"
       /> */}
+      <h1>Welcome To Our Hotels!</h1>
       <div className={classes.browse_hotels}>
         <LeftBar />
         <HotelsBoxes />

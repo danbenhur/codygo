@@ -25,9 +25,9 @@ const HotelsBoxs = () => {
   }
 
   return (
-    <div className={classes.hotels_grid}>
+    <>
       <div className={classes.hotels_grid}>{displayedHotels}</div>
-    </div>
+    </>
   );
 };
 

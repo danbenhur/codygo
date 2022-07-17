@@ -6,6 +6,7 @@
 }
 .filter_title {
   text-align: center;
+  color: #044599;
 }
 .purge_btn {
   background-color: #b60000;
@@ -29,4 +30,7 @@
   color: white;
   font-weight: 700;
   border: none;
+}
+ul li label {
+  color: #044599;
 }

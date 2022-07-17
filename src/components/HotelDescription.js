@@ -14,13 +14,13 @@ const HotelDescription = (props) => {
       <Card className={classes.hotel_details}>
         <div className={classes.details_properties}>
           <div className={classes.details_properties_text}>
-            <h2>{hotel_name}</h2>
-            <h3>{chain_name}</h3>
-            <p>{country}</p>
-            <h3>{city}</h3>
-            <p>{addressline1}</p>
+            <h3>Hotel: {hotel_name}</h3>
+            <h3>Chain: {chain_name}</h3>
+            <p>Country: {country}</p>
+            <h3>City: {city}</h3>
+            <p>Address: {addressline1}</p>
           </div>
-          {/* <Button buttonText /> */}
+          <Button buttonText="Edit Details" buttonClass={classes.edit_button} />
         </div>
 
         <div className={classes.details_img}>
